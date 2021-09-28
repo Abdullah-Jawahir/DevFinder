@@ -5,3 +5,15 @@ $primary-btn: #0079FE;
 $primary-link: #0F54A7;
 $primary-white: #FFFEFA;
 $primary-text: #B1B7CD;
+
+@mixin flexCenter($dir){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: $dir wrap;
+}
+
+@font-face {
+    font-family: 'ubuntu regular';
+    src: url(../fonts/Ubuntu-Regular.ttf);
+}
