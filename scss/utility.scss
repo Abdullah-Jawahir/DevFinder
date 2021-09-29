@@ -4,7 +4,7 @@ $primary-bg: #141C2F;
 $primary-btn: #0079FE;
 $primary-link: #0F54A7;
 $primary-white: #FFFEFA;
-$primary-text: #B1B7CD;
+$primary-text: #B4BCCC;
 
 @mixin flexCenter($dir){
     display: flex;
@@ -16,4 +16,14 @@ $primary-text: #B1B7CD;
 @font-face {
     font-family: 'ubuntu regular';
     src: url(../fonts/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'ubuntu bold';
+    src: url(../fonts/Ubuntu-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'poppins regular';
+    src: url(../fonts/Poppins-Regular.ttf);
 }
