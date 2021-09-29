@@ -28,7 +28,7 @@ body {
     justify-content: space-evenly;
     // border: 1px solid red;
     width: 80%;
-    max-width: 60em;
+    max-width: 33em;
     margin: auto;
     padding-top: 2rem;
 
@@ -133,6 +133,7 @@ body {
 
             grid-area: details;
             @include flexCenter(row);
+            // flex-wrap: nowrap;
             justify-content: flex-start;
             
 
@@ -179,6 +180,11 @@ body {
                         color: $primary-link;
                     }
 
+                    // #first-date {
+
+                    //     visibility: hidden;
+                    // }
+
                     #no-bio-desc {
 
                         display: none;
@@ -196,22 +202,90 @@ body {
 
         #bio {
             grid-area: bio;
+            width: 90%;
         }
     
         .count-table {
     
             grid-area: count;
+            background-color: $primary-bg;
+            border-radius: 10px;
+            padding: .6rem 1.5rem;
+
+            tr {
+
+                th {
+
+                    text-align: left;
+                    text-transform: capitalize;
+                }
+
+                td {
+
+                    color: $primary-white;
+                    // font-weight: bold;
+                    font-size: 1.2rem;
+                }
+            }
         }
     
         .social-icons {
     
             grid-area: social;
+            // border: 1px solid;
+            display: grid;
+            grid-gap: .5rem;
+            // grid-template-areas: 
+            // 'location twitter'
+            // 'link github'
+            // ;
+            grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+
+            a {
+
+                i {
+
+                    color: $primary-white;
+                    margin-right: .5rem;
+                }
+
+                span {
+
+                    color: $primary-text;
+                }
+            }
+
+            // #location {
+
+            //     grid-area: location;
+            // }
+            // #twitter {
+
+            //     grid-area: twitter;
+            // }
+            // #link {
+
+            //     grid-area: link;
+            // }
+            // #github {
+
+            //     grid-area: github;
+            // }
+
+
+            .disable {
+
+                i, span {
+
+                    color: rgb(95, 95, 95);
+                    cursor: default;
+                }
+                
+            }
         }
 
     }
 
-
-
-
 }
+
 

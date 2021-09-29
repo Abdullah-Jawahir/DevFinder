@@ -4,7 +4,8 @@ $primary-bg: #141C2F;
 $primary-btn: #0079FE;
 $primary-link: #0F54A7;
 $primary-white: #E7EEF8;
-$primary-text: #B4BCCC;
+// $primary-text: #B4BCCC;
+$primary-text: #8E96AB;
 
 @mixin flexCenter($dir){
     display: flex;
@@ -26,4 +27,10 @@ $primary-text: #B4BCCC;
 @font-face {
     font-family: 'poppins regular';
     src: url(../fonts/Poppins-Regular.ttf);
+}
+
+@mixin mQ($width) {
+    @media screen and (max-width: $width) {
+        @content;
+    }
 }
