@@ -18,6 +18,7 @@
                 <span class="theme-txt">light</span>
                 <a href="#">
                     <i class="fa fa-sun-o" id="sunshine"></i>
+                    <i class="fa fa-moon-o" id="moonlight">O</i>
                     <!-- <img src="./images/sunshine.png" alt="theme-png"> -->
                 </a>
             </div>
@@ -25,30 +26,72 @@
         </div>
 
         <div class="search-box">
-            <i class="fa fa-search"></i>
+            <i class="fa fa-search">O</i>
             <input type="search" name="search" id="search" placeholder="Search GitHub username..." autocomplete="off">
             <button id="search-btn">search</button>
         </div>
 
         <div class="all-info">
-            <div class="profile-pic">
-                <img src="./images/Octocat.jpg" alt="profile-pic">
-            </div>
 
-            <div class="personal-details">
-                <div class="name-bio">
-                    <p id="username">the octocat</p>
-                    <a href="#">@octocat</a>
-                    <p class="date">Joined 25 Jan 2011</p>
-                    <p id="no-bio-desc">
-                        This profile has no bio
+            <div class="pic-details">
+                <div id="profile-pic">
+                    <img src="./images/Octocat.png" alt="profile-pic">
+                </div>
+    
+                <div class="personal-details">
+                    <div class="name-mini-bio">
+                        <p id="username">the octocat</p>
+                        <a href="#" id="name-link">@octocat</a>
+                        <p class="date" id="first-date">Joined 25 Jan 2011</p>
+                        <p id="no-bio-desc">
+                            This profile has no bio
+                        </p>
+                    </div>
+    
+                    <p class="date" id="second-date">
+                        Joined 25 Jan 2011
                     </p>
                 </div>
-
-                <p class="date">
-                    Joined 25 Jan 2011
-                </p>
             </div>
+
+            <p id="bio">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Donec odio. Quisque volutpat mattis eros.
+            </p>
+
+            <table class="count-table">
+                <tr>
+                    <th>repos</th>
+                    <th>followers</th>
+                    <th>following</th>
+                </tr>
+
+                <tr>
+                    <td id="repos">8</td>
+                    <td id="followers">3938</td>
+                    <td id="following">9</td>
+                </tr>
+            </table>
+
+            <div class="social-icons">
+                <a href="#"  id="location" class="icons">
+                    <i class="fa fa-location">O</i>
+                    <span>San Francisco</span>
+                </a>
+                <a href="#"  id="twitter" class="icons">
+                    <i class="fa fa-twitter">O</i>
+                    <span>Not Available</span>
+                </a>
+                <a href="#"  id="link" class="icons">
+                    <i class="fa fa-link">O</i>
+                    <span>https://github.blog</span>
+                </a>
+                <a href="#"  id="github" class="icons">
+                    <i class="fa fa-flag">O</i>
+                    <span>@github</span>
+                </a>
+                
+            </div>
+
         </div>
 
 
