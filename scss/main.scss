@@ -51,7 +51,13 @@ body {
             .theme-txt {
 
                 margin-right: 1rem;
+                text-transform: uppercase;
 
+            }
+
+            a {
+
+                color: $primary-white;
             }
         }
     }
