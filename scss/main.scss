@@ -288,4 +288,118 @@ body {
 
 }
 
+@include mQ(375px) {
 
+
+    body {
+
+        padding: 1rem;
+        font-size: 13px;
+    }
+
+    .container {
+
+        width: 90%;
+
+        .header {
+
+            .logo {
+
+                font-size: 1.5rem;
+            }
+
+            .theme {
+
+                .theme-txt {
+
+                    letter-spacing: .2rem;
+                }
+            }
+        }
+
+        .search-box {
+            padding-left: 1rem;
+
+            i {
+
+                font-weight: lighter;
+            }
+
+            #search {
+
+                font-size: 13px;
+                // border: 1px solid;
+                width: 65%;
+                padding-right: 0;
+            }
+
+            #search-btn {
+
+                font-size: 13px;
+                text-align: center;
+                width: fit-content;
+                padding: .8rem .9rem;
+            }
+        }
+
+        .all-info {
+
+            padding-left: 1rem;
+
+            .pic-details {
+
+                flex-wrap: nowrap;
+
+                #profile-pic {
+
+                    width: 70px;
+                    height: 70px;
+                    margin-right: 1rem;
+                }
+            }
+
+            #bio {
+
+                // border: 1px solid black;
+                width: 100%;
+                line-height: 1.8;
+            }
+
+            .count-table {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                tr{
+                    
+                    th {
+
+                        text-align: center;
+                    }
+
+                    td {
+
+                        text-align: center;
+                        font-size: 1rem;
+                    }
+                }
+
+            }
+            
+            .social-icons {
+
+                #location {
+                    order: 1;
+                }
+                #twitter {
+                    order: 3;
+                }
+                #link {
+                    order: 2;
+                }
+                #github {
+                    order: 4;
+                }
+            }
+        }
+        
+    }
+}
