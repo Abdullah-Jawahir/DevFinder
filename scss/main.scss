@@ -218,6 +218,7 @@ body {
         background-color: $primary-color;
         padding: 2rem;
         border-radius: 15px;
+        // padding-right: 0;
 
         .pic-details {
 
@@ -251,6 +252,9 @@ body {
                 display: flex;
 
                 .name-mini-bio {
+                    // border: 1px solid white;
+                    max-width: fit-content;
+                    
 
                     p{
 
@@ -323,13 +327,8 @@ body {
         .social-icons {
     
             grid-area: social;
-            // border: 1px solid;
             display: grid;
             grid-gap: .5rem;
-            // grid-template-areas: 
-            // 'location twitter'
-            // 'link company'
-            // ;
             grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
 
             a {
@@ -345,23 +344,6 @@ body {
                     color: $primary-text;
                 }
             }
-
-            // #location {
-
-            //     grid-area: location;
-            // }
-            // #twitter {
-
-            //     grid-area: twitter;
-            // }
-            // #link {
-
-            //     grid-area: link;
-            // }
-            // #company {
-
-            //     grid-area: company;
-            // }
 
 
             .disable {
@@ -509,6 +491,8 @@ body {
                     margin-right: 1rem;
                 }
             }
+
+            
 
             #bio {
 
