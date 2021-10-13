@@ -1,11 +1,21 @@
-// primary
+// Black theme
 $primary-color: #1F2A48;
 $primary-bg: #141C2F;
 $primary-btn: #0079FE;
-$primary-link: #0F54A7;
 $primary-white: #E7EEF8;
-// $primary-text: #B4BCCC;
 $primary-text: #8E96AB;
+
+// White theme
+$main-bg-white: #F5F8FF;
+$nrml-bg-color: #FEFEFE;
+$logo-black: #191C22;
+$moon-color: #62758F;
+$new-text-color: #4A699F;
+$new-disable-color: #A2B4CE;
+$table-bg: #F5F8FF;
+
+
+
 
 @mixin flexCenter($dir){
     display: flex;
