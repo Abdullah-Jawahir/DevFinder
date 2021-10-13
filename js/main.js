@@ -2,6 +2,8 @@
 const themeText = document.querySelector('.theme .theme-txt');
 const sun = document.querySelector('#sun');
 const moon = document.querySelector('#moon');
+const search = document.getElementById('search');
+const searchBtn = document.getElementById('search-btn');
 
 // Remove moon from display and set the click function to sun object
 moon.style.display = "none";
@@ -24,3 +26,6 @@ function defaultTheme() {
     moon.style.display = "none";
     sun.style.display = "block";
 }
+
+
+
