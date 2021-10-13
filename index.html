@@ -27,12 +27,13 @@
 
         <div class="search-box">
             <i class="fa fa-search"></i>
-            <input type="search" name="search" id="search" placeholder="Search GitHub username..." autocomplete="off">
+            <input type="search" name="search" id="search" placeholder="Search GitHub username..." autocomplete="off" required>
             <button id="search-btn">search</button>
         </div>
 
-        <div class="all-info">
+        <div class="all-info" id="all-information">
 
+            <!-- Details (if has bio) -->
             <div class="pic-details">
                 <div id="profile-pic">
                     <img src="./images/octocat-2.png" alt="profile-pic">
@@ -53,6 +54,30 @@
                     </p>
                 </div>
             </div>
+
+
+            <!-- Details (if no bio) -->
+            <!-- <div id="profile-pic">
+                <img src="./images/octocat-2.png" alt="profile-pic">
+            </div>
+
+            <div class="pic-details">
+                <div class="personal-details">
+                    <div class="name-mini-bio">
+                        <p id="username">the octocat</p>
+                        <a href="#" id="name-link">@octocat</a>
+                        <p class="date" id="first-date">Joined 25 Jan 2011</p>
+                        <p id="no-bio-desc">
+                            This profile has no bio
+                        </p>
+                    </div>
+    
+                    <p class="date" id="second-date">
+                        Joined 25 Jan 2011
+                    </p>
+                </div>
+            </div> -->
+
 
             <p id="bio">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Donec odio. Quisque volutpat mattis eros.
@@ -85,7 +110,7 @@
                     <i class="fa fa-link"></i>
                     <span>https://github.blog</span>
                 </a>
-                <a href="#"  id="github" class="icons">
+                <a href="#"  id="company" class="icons">
                     <i class="fa fa-github"></i>
                     <span>@github</span>
                 </a>

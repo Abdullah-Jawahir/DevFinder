@@ -76,7 +76,7 @@
                     }
                 }
 
-                .disable{
+                .disable {
 
                     i, span {
 
@@ -93,7 +93,6 @@ body {
     background-color: $primary-bg;
     color: $primary-text;
     
-
     a {
 
         text-decoration: none
@@ -214,7 +213,8 @@ body {
         'count count'
         'social social'
         ;
-        grid-gap: 1.5rem;
+        grid-column-gap: 1.5rem;
+        grid-row-gap: 1.5rem;
         background-color: $primary-color;
         padding: 2rem;
         border-radius: 15px;
@@ -223,8 +223,9 @@ body {
 
             grid-area: details;
             @include flexCenter(row);
-            // flex-wrap: nowrap;
+            flex-wrap: nowrap;
             justify-content: flex-start;
+            
             
 
             #profile-pic {
@@ -327,7 +328,7 @@ body {
             grid-gap: .5rem;
             // grid-template-areas: 
             // 'location twitter'
-            // 'link github'
+            // 'link company'
             // ;
             grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
 
@@ -357,9 +358,9 @@ body {
 
             //     grid-area: link;
             // }
-            // #github {
+            // #company {
 
-            //     grid-area: github;
+            //     grid-area: company;
             // }
 
 
@@ -376,6 +377,67 @@ body {
 
     }
 
+}
+
+.no-bio-card {
+
+    max-width: 40em;
+
+    .all-info{
+
+        grid-template-areas: 
+        'pic details'
+        '. count'
+        '. social'
+        ;
+        grid-column-gap: 0;
+        padding-left: 0;
+        
+
+        #profile-pic {
+
+            grid-area: pic;
+            width: 110px;
+            height: 110px;
+            margin: auto;
+            
+
+            img {
+
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: inline-block;
+                background-color: #E7EEF8;
+                border-radius: 50%;
+            }
+        }
+
+        .pic-details {
+
+            .personal-details {
+
+                .name-mini-bio {
+
+                    #first-date {
+
+                        visibility: hidden;
+                    }
+
+                    #no-bio-desc {
+
+                        display: block;
+                    }
+                }
+
+                #second-date {
+
+                    display: block;
+                }
+            }
+        }
+
+    }
 }
 
 @include mQ(375px) {
@@ -485,11 +547,80 @@ body {
                 #link {
                     order: 2;
                 }
-                #github {
+                #company {
                     order: 4;
                 }
             }
         }
         
+    }
+
+    .no-bio-card {
+
+        .all-info{
+            padding: 1rem;
+
+            grid-template-areas: 
+            'pic details'
+            'count count'
+            'social social'
+            ;
+            
+            
+    
+            #profile-pic {
+    
+                grid-area: pic;
+                width: 70px;
+                height: 70px;
+                margin: auto;
+                margin-right: 1rem;
+                margin-left: 1rem;
+                
+                img {
+    
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: inline-block;
+                    background-color: #E7EEF8;
+                    border-radius: 50%;
+                }
+            }
+    
+            .pic-details {
+    
+                .personal-details {
+    
+                    .name-mini-bio {
+    
+                        #first-date {
+    
+                            visibility: visible;
+                            margin-top: 5px;
+                        }
+    
+                        #no-bio-desc {
+    
+                            display: block;
+                        }
+
+                    }
+    
+                    #second-date {
+    
+                        display: none;
+                    }
+                }
+            }
+
+
+            .social-icons {
+
+                @include flexCenter(column);
+                align-items: flex-start;
+            }
+    
+        }
     }
 }
