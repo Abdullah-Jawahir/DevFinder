@@ -228,8 +228,8 @@ function getUsers(username) {
             linkSpan.textContent = user.blog;
         }
 
-        const company = document.getElementById('github');
-        const companySpan = document.querySelector('#github span');
+        const company = document.getElementById('company');
+        const companySpan = document.querySelector('#company span');
         if (user.company == null || user.blog == "") {
 
             companySpan.textContent = 'Not Available';
