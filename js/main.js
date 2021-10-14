@@ -197,24 +197,29 @@ function getUsers(username) {
 
         const location = document.getElementById('location');
         const locationSpan = document.querySelector('#location span');
-        if (user.location == null || user.blog == "") {
+        if (user.location == null || user.location == "") {
 
             locationSpan.textContent = 'Not Available';
             location.classList.add('disable');
+            location.href = '#';
         } else {
 
             locationSpan.textContent = user.location;
+            location.href = user.location;
+            
         }
 
         const twitter = document.getElementById('twitter');
         const twitterSpan = document.querySelector('#twitter span');
-        if (user.twitter_username == null || user.blog == "") {
+        if (user.twitter_username == null || user.twitterSpan == "") {
 
             twitterSpan.textContent = 'Not Available';
             twitter.classList.add('disable');
+            twitter.href = '#';
         } else {
 
             twitterSpan.textContent = user.twitter_username;
+            twitter.href = user.twitter_username;
         }
 
         const link = document.getElementById('link');
@@ -223,20 +228,24 @@ function getUsers(username) {
 
             linkSpan.textContent = 'Not Available';
             link.classList.add('disable');
+            link.href = '#';
         } else {
 
             linkSpan.textContent = user.blog;
+            link.href = user.blog
         }
 
         const company = document.getElementById('company');
         const companySpan = document.querySelector('#company span');
-        if (user.company == null || user.blog == "") {
+        if (user.company == null || user.company == "") {
 
             companySpan.textContent = 'Not Available';
             company.classList.add('disable');
+            company.href = '#';
         } else {
 
             companySpan.textContent = user.company;
+            company.href = `https://www.${user.company}.com`;
         }
 
         
