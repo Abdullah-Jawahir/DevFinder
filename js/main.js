@@ -196,7 +196,7 @@ function displayInfo(person) {
                 <div class="personal-details">
                     <div class="name-mini-bio">
                         <p id="personname">${person.name}</p>
-                        <a href="${person.html_url}" id="name-link">@${person.login}</a>
+                        <a href="${person.html_url}" target="_blank" id="name-link">@${person.login}</a>
                         <p class="date" id="first-date">${person.created_at}</p>
                         <p id="no-bio-desc">
                             This profile has no bio
