@@ -51,11 +51,11 @@ function getUsers(username) {
         const twitter = document.getElementById('twitter');
         const twitterSpan = document.querySelector('#twitter span');
         handleIcons(twitter, twitterSpan, user.twitter_username);
-        if (user.twitter_username == null || user.twitter_username == "") {
-            twitter.href = '#';
-        } else {
-            twitter.href = `https://twitter.com/${user.twitter_username}`; 
-        }
+        // if (user.twitter_username == null || user.twitter_username == "") {
+        //     twitter.href = '#';
+        // } else {
+        //     twitter.href = `https://twitter.com/${user.twitter_username}`; 
+        // }
 
         const link = document.getElementById('link');
         const linkSpan = document.querySelector('#link span');
@@ -79,24 +79,28 @@ function handleIcons(iconName, iconSpan, userDetail) {
     } else {
         iconName.classList.remove('disable');
         iconSpan.textContent = userDetail;
-        iconName.target = '_blank';
+        // iconName.target = '_blank';
 
         // Sub condition to check if userDetail contains any special keywords
-        if (userDetail.includes('https')) {
-            iconName.href = userDetail;
+        // if (userDetail.includes('https')) {
+        //     iconName.href = userDetail;
 
-        } else if ( userDetail.includes('.com') ) {
-            iconName.href = `https://www.${userDetail}`;
+        // } else if ( userDetail.includes('.com') ) {
+        //     iconName.href = `https://www.${userDetail}`;
 
-        } else if ( userDetail.includes(" ") ) {
-            let detailArray = userDetail.split(" ");
-            console.log(detailArray);
+        // } else if ( userDetail.includes(" ") ) {
+        //     let detailArray = userDetail.split(" ");
+        //     let attachedName = '';
+        //     detailArray.forEach((detail) => {
 
-        } else {
-            // iconName.href = `https://${userDetail}.com`;
-            iconName.href = `www.${userDetail}.com`;
+        //         attachedName += detail;
+        //     });
+        //     iconName.href = `https://www.${attachedName}.com`;
 
-        }
+        // } else {
+        //     iconName.href = `www.${userDetail}.com`;
+
+        // }
         
     }
 }
