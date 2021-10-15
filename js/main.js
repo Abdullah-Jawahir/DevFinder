@@ -42,70 +42,28 @@ function getUsers(username) {
     .then((user) => {
         displayInfo(user);
 
-
         const location = document.getElementById('location');
         const locationSpan = document.querySelector('#location span');
         handleIcons(location, locationSpan, user.location);
-        // if (user.location == null || user.location == "") {
-
-        //     locationSpan.textContent = 'Not Available';
-        //     location.classList.add('disable');
-        //     location.href = '#';
-        // } else {
-
-        //     locationSpan.textContent = user.location;
-        //     location.href = user.location;
-            
-        // }
         
-
         const twitter = document.getElementById('twitter');
         const twitterSpan = document.querySelector('#twitter span');
         handleIcons(twitter, twitterSpan, user.twitter_username);
-        // if (user.twitter_username == null || user.twitter_username == "") {
+        if (user.twitter_username == null || user.twitter_username == "") {
 
-        //     twitterSpan.textContent = 'Not Available';
-        //     twitter.classList.add('disable');
-        //     twitter.href = '#';
-        // } else {
-
-        //     twitter.classList.remove('disable');
-        //     twitterSpan.textContent = user.twitter_username;
-        //     twitter.href = user.twitter_username;
-        // }
-        
+            twitter.href = '#';
+            
+        } else {
+            twitter.href = `https://twitter.com/${user.twitter_username}`; 
+        }
 
         const link = document.getElementById('link');
         const linkSpan = document.querySelector('#link span');
         handleIcons(link, linkSpan, user.blog);
-        // if (user.blog == null || user.blog == "") {
-
-        //     linkSpan.textContent = 'Not Available';
-        //     link.classList.add('disable');
-        //     link.href = '#';
-        // } else {
-
-        //     linkSpan.textContent = user.blog;
-        //     link.href = user.blog
-        // }
-        
-
 
         const company = document.getElementById('company');
         const companySpan = document.querySelector('#company span');
         handleIcons(company, companySpan, user.company);
-        // if (user.company == null || user.company == "") {
-
-        //     companySpan.textContent = 'Not Available';
-        //     company.classList.add('disable');
-        //     company.href = '#';
-        // } else {
-
-        //     companySpan.textContent = user.company;
-        //     company.href = `https://www.${user.company}.com`;
-        // }
-
-        
 
     });
 }
@@ -122,15 +80,24 @@ function handleIcons(iconName, iconSpan, userDetail) {
 
         iconName.classList.remove('disable');
         iconSpan.textContent = userDetail;
+        iconName.target = '_blank';
 
         if (userDetail.includes('https')) {
 
             iconName.href = userDetail;
+        } else if ( userDetail.includes('.com') ) {
+
+            iconName.href = `https://www.${userDetail}`;
+        } else if ( userDetail.includes(" ") ) {
+
+            let detailArray = userDetail.split(" ");
+            console.log(detailArray);
         }
         
         else {
 
-            iconName.href = `https://${userDetail}.com`;
+            // iconName.href = `https://${userDetail}.com`;
+            iconName.href = `www.${userDetail}.com`;
         }
         
     }
@@ -160,7 +127,7 @@ function displayInfo(person) {
                 <div class="personal-details">
                     <div class="name-mini-bio">
                         <p id="personname">${person.name}</p>
-                        <a href="${person.html_url}" id="name-link">@${person.login}</a>
+                        <a href="${person.html_url}" target="_blank" id="name-link">@${person.login}</a>
                         <p class="date" id="first-date">Joined ${person.created_at}</p>
                         <p id="no-bio-desc">
                             This profile has no bio
