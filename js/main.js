@@ -8,8 +8,9 @@ const searchBtn = document.getElementById('search-btn');
 // Remove some items from display
 moon.style.display = "none";
 
-// set the click function to sun object
+// set the click function to sun & moon object
 sun.addEventListener('click', whiteTheme);
+moon.addEventListener('click', defaultTheme);
 
 // changes to light theme
 function whiteTheme() {
@@ -20,7 +21,6 @@ function whiteTheme() {
 }
 
 // changes to dark theme
-moon.addEventListener('click', defaultTheme);
 function defaultTheme() {
     document.querySelector('body').classList.remove("white-theme");
     themeText.innerText = 'light';
@@ -28,20 +28,22 @@ function defaultTheme() {
     sun.style.display = "block";
 }
 
-
+// Function for the search button: Searches users when a username is typed in the search input field.
 searchBtn.addEventListener('click', searchUser);
 function searchUser() {
     const searchTxt = search.value;
     getUsers(searchTxt);
 }
 
-
+// Function to get the users out of the database of github in real time
 function getUsers(username) {
     fetch(`https://api.github.com/users/${username}`)
     .then((res) => res.json())
     .then((user) => {
+        // Display the user information in the screen
         displayInfo(user);
 
+        // This portion will handle the social icons in th UI
         const location = document.getElementById('location');
         const locationSpan = document.querySelector('#location span');
         handleIcons(location, locationSpan, user.location);
@@ -50,9 +52,7 @@ function getUsers(username) {
         const twitterSpan = document.querySelector('#twitter span');
         handleIcons(twitter, twitterSpan, user.twitter_username);
         if (user.twitter_username == null || user.twitter_username == "") {
-
             twitter.href = '#';
-            
         } else {
             twitter.href = `https://twitter.com/${user.twitter_username}`; 
         }
@@ -68,54 +68,54 @@ function getUsers(username) {
     });
 }
 
-
+// Function to hanlde the icons
 function handleIcons(iconName, iconSpan, userDetail) {
-
+    // Main condition to check if userDetail is available or not
     if (userDetail == null || userDetail == "") {
-
         iconSpan.textContent = 'Not Available';
         iconName.classList.add('disable');
         iconName.href = '#';
-    } else {
 
+    } else {
         iconName.classList.remove('disable');
         iconSpan.textContent = userDetail;
         iconName.target = '_blank';
 
+        // Sub condition to check if userDetail contains any special keywords
         if (userDetail.includes('https')) {
-
             iconName.href = userDetail;
+
         } else if ( userDetail.includes('.com') ) {
-
             iconName.href = `https://www.${userDetail}`;
-        } else if ( userDetail.includes(" ") ) {
 
+        } else if ( userDetail.includes(" ") ) {
             let detailArray = userDetail.split(" ");
             console.log(detailArray);
-        }
-        
-        else {
 
+        } else {
             // iconName.href = `https://${userDetail}.com`;
             iconName.href = `www.${userDetail}.com`;
+
         }
         
     }
 }
 
 
-
+// Function to display the user information in the screen
 function displayInfo(person) {
+    // Initialize some local objects
     const allInfo = document.getElementById('all-information');
     const container = document.querySelector('.container');
     
+    // Main condition to check if the user is available or not
     if (person.message == 'Not Found') {
-
         console.log('User not found');
+
     } else {
 
+        // Sub condition to check if the user has a bio and the search input field is not empty
         if ( person.bio && search.value.length > 0) {
-
             container.classList.remove('no-bio-card');
             let information = `
             
@@ -180,8 +180,10 @@ function displayInfo(person) {
         
         `;
 
+        // Specify the gathered information to the allInfo section
         allInfo.innerHTML = information;
 
+        // Sub condition to check if the user bio is null and search input field is not empty
         } else if ( person.bio == null && search.value.length > 0 ) {
 
             container.classList.add('no-bio-card');
