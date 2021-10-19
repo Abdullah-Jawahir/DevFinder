@@ -68,6 +68,7 @@ function getUsers(username) {
     });
 }
 
+
 // Function to hanlde the icons
 function handleIcons(iconName, iconSpan, userDetail) {
     // Main condition to check if userDetail is available or not
